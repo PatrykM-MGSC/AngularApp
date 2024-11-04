@@ -2,8 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
 Additionally added:
-- [Bootstrap] (https://github.com/twbs) 
-- [Animate.css] (https://animate.style)
+- [Bootstrap](https://github.com/twbs) 
+- [Animate.css](https://animate.style)
 
 ## Development server
 
