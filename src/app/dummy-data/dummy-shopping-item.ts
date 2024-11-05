@@ -12,7 +12,7 @@ export const DUMMY_SHOPPING_ITEMS: ShoppingItem[] = [
     {
         id: 2,
         name: "Apple Watch 10 46mm",
-        description: "color black, 46mm, NFC, GPS",
+        description: "color black, 46mm, NFC, GPS, Always-on display",
         imgFile: "appleWatcg.png",
         categories: ["smartwatches", "lifestyle"],
         price: 2199

@@ -3,7 +3,7 @@
     <div class="card-body">
       <h5 class="card-title">{{ item.name }}</h5>
       <p class="card-text">{{ item.description }}</p>
-      <h4 class="product-price">{{ item.price | currency:'PLN':'symbol' }}</h4>
+      <h4 class="product-price">{{ formattedPrice }}</h4>
       <div class="text-center"><a class="btn btn-outline-secondary m-3" href="#">Add to cart</a></div>
       <p class="card-text">
         <small class="text-muted">categories: {{ item.categories.join(', ') }}</small>
