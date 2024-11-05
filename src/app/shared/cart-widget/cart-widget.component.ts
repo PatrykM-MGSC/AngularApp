@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './cart-widget.component.html',
   styleUrl: './cart-widget.component.css'
 })
-export class CartWidgetComponent {}
+export class CartWidgetComponent {
+  numberOfItemsAddedToChart = 0;
+}

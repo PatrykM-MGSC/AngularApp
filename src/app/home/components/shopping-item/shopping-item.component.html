@@ -1,12 +1,12 @@
-<div class="card">
-    <img src="../../assets/ip16pm.png" class="card-img-top center-img" alt="...">
+<div class="card animate__animated animate__fadeIn animate__delay-1s">
+  <img [src]="imgPath + item.imgFile" class="card-img-top center-img" alt="product image">
     <div class="card-body">
-      <h5 class="card-title">Item name</h5>
-      <p class="card-text">Some description Some descriptionSome descriptionSome description</p>
-      <h4 class="product-price">5.000 zł</h4>
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p class="card-text">{{ item.description }}</p>
+      <h4 class="product-price">{{ item.price | currency:'PLN':'symbol' }}</h4>
       <div class="text-center"><a class="btn btn-outline-secondary m-3" href="#">Add to cart</a></div>
       <p class="card-text">
-        <small class="text-muted">categories: compiuters, homeOffice</small>
+        <small class="text-muted">categories: {{ item.categories.join(', ') }}</small>
       </p>
     </div>
   </div>
