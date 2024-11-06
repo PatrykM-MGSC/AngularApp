@@ -14,10 +14,13 @@ import { PriceFormatterService } from '../../../shared/price-formatter-service/p
 export class ShoppingItemComponent {
   constructor(private priceFormatter: PriceFormatterService) {}
 
-  imgPath = "../../../assets/";
   @Input() item!: ShoppingItem;
   
   get formattedPrice(): string {
     return this.priceFormatter.formatPrice(this.item.price);
+  }
+
+  get imgPath() {
+    return "../../../assets/" + this.item.imgFile
   }
 }

@@ -7,6 +7,10 @@ export class PriceFormatterService {
   constructor() { }
 
   formatPrice(price: number): string {
-    return price.toLocaleString('pl-PL') + ' PLN';
+    return new Intl.NumberFormat('pl-PL', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+      useGrouping: true,
+    }).format(price) + ' PLN';
   }
 }
