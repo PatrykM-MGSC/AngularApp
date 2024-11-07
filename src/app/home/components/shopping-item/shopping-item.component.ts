@@ -27,6 +27,6 @@ export class ShoppingItemComponent {
   }
 
   onAddToCart() {
-    this.cartService.addToCart(this.item);
+    this.cartService.addToCart(this.item.id);
   }
 }
