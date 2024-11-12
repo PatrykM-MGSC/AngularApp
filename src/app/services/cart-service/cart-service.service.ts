@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, Signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { CartItem } from '../../models/cart-item.model';
 
 @Injectable({
@@ -17,20 +17,21 @@ export class CartService {
     const existingItem = this.cartItems().get(itemId);
 
     if (existingItem) {
-      this.increaseQuantity(existingItem)
+      this.changeQuantity(existingItem.itemId, existingItem.quantity + 1);
     } else {
       this.cartItems.set(new Map(this.cartItems()).set(itemId, { itemId: itemId, quantity: 1 }));
+      this.saveCartToStorage();
     }
-    
+  }
+
+  changeQuantity(itemId: number, newQuantity: number) {
+    const cart = this.cartItems();
+    const cartItem = cart.get(itemId)!;
+    cart.set(itemId, { ...cartItem, quantity: newQuantity });
+    this.cartItems.set(new Map(cart));
     this.saveCartToStorage();
   }
-
-  private increaseQuantity(existingItem: CartItem) {
-    const cart = this.cartItems();
-    cart.set(existingItem.itemId, { ...existingItem, quantity: existingItem.quantity + 1 });
-    this.cartItems.set(new Map(cart));  
-  }
-
+  
   private saveCartToStorage() {
     localStorage.setItem(this.cartName, JSON.stringify(Array.from(this.cartItems().entries())));
   }
