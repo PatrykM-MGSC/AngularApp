@@ -7,12 +7,13 @@ import { CartService } from '../services/cart-service/cart-service.service';
 import { ShoppingItemsService } from '../services/fetch-data-services/shopping-items-service.service';
 import { CartItem } from '../models/cart-item.model';
 import { BannerComponent } from "../shared/banner/banner.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
   imports: [HeaderComponent, FooterComponent, CartItemsListComponent,
-    ShoppingSummaryComponent, BannerComponent],
+    ShoppingSummaryComponent, BannerComponent, CommonModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
