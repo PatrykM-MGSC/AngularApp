@@ -45,6 +45,21 @@ export class CartService {
     }
   }
 
+  deleteItem(itemId: number) {
+    const cart = this.cartItems();
+    
+    if (cart.has(itemId)) {
+      cart.delete(itemId);
+      this.cartItems.set(new Map(cart));
+      this.saveCartToStorage();
+    }
+  }
+
+  clear() {
+    this.cartItems.set(new Map()); 
+    localStorage.removeItem(this.cartName); 
+  }
+
   get cartItemsStorageCount (){
     return Array.from(this.cartItems().values()).reduce((total, cartItem) => total + cartItem.quantity, 0);
   };
