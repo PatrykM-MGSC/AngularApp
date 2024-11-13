@@ -1,3 +1,10 @@
 .quantityButton {
     height: 40px;
 }
+
+.quantityInput {
+    width: 2.8rem;
+    text-align: center;
+    padding-right: 0px;
+    padding-left: 0px;
+}
