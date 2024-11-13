@@ -31,7 +31,7 @@ export class CartService {
     this.cartItems.set(new Map(cart));
     this.saveCartToStorage();
   }
-  
+
   private saveCartToStorage() {
     localStorage.setItem(this.cartName, JSON.stringify(Array.from(this.cartItems().entries())));
   }
