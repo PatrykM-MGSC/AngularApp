@@ -45,14 +45,18 @@ export class CartService {
     }
   }
 
-  deleteItem(itemId: number) {
-    const cart = this.cartItems();
-    
-    if (cart.has(itemId)) {
-      cart.delete(itemId);
-      this.cartItems.set(new Map(cart));
-      this.saveCartToStorage();
-    }
+  deleteItem(itemId: number): Promise<void> {
+    return new Promise((resolve, reject) => {
+      try {
+        const currentCart = new Map(this.cartItems());
+        currentCart.delete(itemId);
+        this.cartItems.set(currentCart);
+        this.saveCartToStorage();
+        resolve();
+      } catch (error) {
+        reject(error);
+      }
+    });
   }
 
   clear() {
