@@ -1,4 +1,10 @@
 .cart {
-    margin-top: 15rem;
+    margin-top: 3rem;
     margin-bottom: 2rem;
+}
+
+.emptyCart {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
 }

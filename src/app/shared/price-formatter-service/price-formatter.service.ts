@@ -6,7 +6,10 @@ import { Injectable } from '@angular/core';
 export class PriceFormatterService {
   constructor() { }
 
-  formatPrice(price: number): string {
+  formatPrice(price: number | undefined): string {
+    if (price === undefined)
+      return "-"
+    
     return new Intl.NumberFormat('pl-PL', {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,

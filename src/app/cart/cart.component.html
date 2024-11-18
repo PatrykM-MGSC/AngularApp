@@ -1,8 +1,12 @@
 <app-header></app-header>
+<app-banner></app-banner>
 <div class="container cart">
-    <div class="row">
-        <div class="col-sm-8"><app-cart-items-list></app-cart-items-list></div>
+    <div class="row" *ngIf="cartItems.length > 0">
+        <div class="col-sm-8"><app-cart-items-list [cartItems]="cartItems"></app-cart-items-list></div>
         <div class="col-sm-4"><app-shopping-summary></app-shopping-summary></div>
-      </div>
+    </div>
+    <div class="col-sm-12 emptyCart" *ngIf="cartItems.length === 0">
+      <p>Your cart is empty.</p>
+    </div>
 </div>
 <app-footer></app-footer>
