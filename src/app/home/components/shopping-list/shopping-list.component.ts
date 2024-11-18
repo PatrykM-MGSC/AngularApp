@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ShoppingItemComponent } from "../shopping-item/shopping-item.component";
-import { DUMMY_SHOPPING_ITEMS } from '../../../dummy-data/dummy-shopping-item';
 import { CommonModule } from '@angular/common';
+import { ShoppingItem } from '../../../models/shopping-item.model';
 
 @Component({
   selector: 'app-shopping-list',
@@ -12,5 +12,5 @@ import { CommonModule } from '@angular/common';
 })
 
 export class ShoppingListComponent {
-    shoppingItems = DUMMY_SHOPPING_ITEMS;
+  @Input({required: true}) shoppingItems!: ShoppingItem[];
 }
