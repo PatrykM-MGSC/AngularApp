@@ -8,7 +8,7 @@
       </button>
     </h5>
     <div class="card-body">
-      <h5 class="card-title">{{ formattedPrice }}</h5>
+      <h5 class="card-title">{{ cartItem.item?.price | formatPrice }}</h5>
       <p class="card-text">{{ cartItem.item?.description }}</p>
       <app-item-quantity [quantity]="cartItem.quantity" [id]="cartItem.itemId"></app-item-quantity>
     </div>
