@@ -1,1 +1,3 @@
-<app-cart-item *ngFor="let item of cartItems" [cartItem]="item"></app-cart-item>
+@for (item of cartItems; track item.itemId) {
+  <app-cart-item [cartItem]="item"></app-cart-item>
+}
