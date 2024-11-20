@@ -24,7 +24,7 @@ export class CartComponent {
   constructor(private cartService: CartService, private shoppingItemsService: ShoppingItemsService) {
     this.loadShoppingItemsByCartItemsId();
   }
-//json-server --watch .\src\app\dummy-data\db-dummy-data.json --port 300
+
   private loadShoppingItemsByCartItemsId() {
     const cartItems = computed(() => this.cartService.cartItemsStorage);
     const cartItemsIds = cartItems().map(cartItem => cartItem.itemId);
