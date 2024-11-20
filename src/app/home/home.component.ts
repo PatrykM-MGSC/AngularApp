@@ -4,7 +4,7 @@ import { CartWidgetComponent } from "../shared/cart-widget/cart-widget.component
 import { FooterComponent } from "../shared/footer/footer.component";
 import { BannerComponent } from '../shared/banner/banner.component';
 import { ShoppingListComponent } from "./components/shopping-list/shopping-list.component";
-import { ShoppingItemsService } from '../services/fetch-data-services/shopping-items-service.service';
+import { ShoppingItemsService } from '../services/fetch-data-service/fetch-data-service.service';
 import { ShoppingItem } from '../models/shopping-item.model';
 
 @Component({
@@ -24,7 +24,9 @@ export class HomeComponent {
   }
 
   private loadShoppingItems() {
-    this.shoppingItemsList = this.shoppingItemsService.getShoppingItems();
+    this.shoppingItemsService.getShoppingItems().subscribe(items => {
+      this.shoppingItemsList = items;
+    });
   }
 
   get shoppingItems() {
