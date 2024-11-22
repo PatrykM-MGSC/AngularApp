@@ -1,9 +1,9 @@
 <app-header></app-header>
 <app-banner></app-banner>
 <div class="container cart">
-  @if (cartItems.length > 0) {
+  @if (cartItems().length > 0) {
     <div class="row">
-        <div class="col-sm-8"><app-cart-items-list [cartItems]="cartItems"></app-cart-items-list></div>
+        <div class="col-sm-8"><app-cart-items-list [cartItems]="cartItems()"></app-cart-items-list></div>
         <div class="col-sm-4"><app-shopping-summary></app-shopping-summary></div>
     </div>
   } @else {
