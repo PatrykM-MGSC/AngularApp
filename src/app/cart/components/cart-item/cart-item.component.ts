@@ -10,7 +10,7 @@ import { FormatPricePipe } from '../../../shared/pipes/format-price-pipe.pipe';
   standalone: true,
   imports: [ItemQuantityComponent, PopupWindowComponent, FormatPricePipe],
   templateUrl: './cart-item.component.html',
-  styleUrl: './cart-item.component.css'
+  styleUrl: './cart-item.component.scss'
 })
 
 export class CartItemComponent implements OnInit{

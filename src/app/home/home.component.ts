@@ -13,7 +13,7 @@ import { ShoppingItem } from '../models/shopping-item.model';
   imports: [HeaderComponent, CartWidgetComponent, FooterComponent, 
     BannerComponent, ShoppingListComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 
 export class HomeComponent {

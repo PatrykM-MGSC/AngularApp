@@ -8,7 +8,7 @@ import { ShoppingItem } from '../../../models/shopping-item.model';
   standalone: true,
   imports: [ShoppingItemComponent, CommonModule],
   templateUrl: './shopping-list.component.html',
-  styleUrl: './shopping-list.component.css'
+  styleUrl: './shopping-list.component.scss'
 })
 
 export class ShoppingListComponent {

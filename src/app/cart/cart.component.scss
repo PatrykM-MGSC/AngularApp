@@ -1,0 +1,15 @@
+$spacing-large: 4rem;
+$spacing-medium: 3rem;
+$spacing-small: 2rem;
+$font-large: 3rem;
+
+.cart {
+    margin-top: $spacing-medium;
+    margin-bottom: $spacing-small;
+}
+
+.emptyCart {
+    font-size: $font-large;
+    margin-bottom: $spacing-large;
+    text-align: center;
+}

@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './cart-widget.component.html',
-  styleUrl: './cart-widget.component.css'
+  styleUrl: './cart-widget.component.scss'
 })
 
 export class CartWidgetComponent {

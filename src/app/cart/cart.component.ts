@@ -16,7 +16,7 @@ import { ShoppingItem } from '../models/shopping-item.model';
   imports: [HeaderComponent, FooterComponent, CartItemsListComponent,
     ShoppingSummaryComponent, BannerComponent, CommonModule],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.scss'
 })
 
 export class CartComponent {

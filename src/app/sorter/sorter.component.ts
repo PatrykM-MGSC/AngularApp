@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './sorter.component.html',
-  styleUrl: './sorter.component.css'
+  styleUrl: './sorter.component.scss'
 })
 export class SorterComponent {}

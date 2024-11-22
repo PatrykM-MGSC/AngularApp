@@ -7,7 +7,7 @@ import { PopupWindowComponent } from "./shared/popup-window/popup-window.compone
   standalone: true,
   imports: [RouterModule, PopupWindowComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 
 export class AppComponent {
