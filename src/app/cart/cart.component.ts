@@ -20,26 +20,12 @@ import { ShoppingItem } from '../models/shopping-item.model';
 })
 
 export class CartComponent {
-  cartMappedItems: CartItem[] = []
+  cartMappedItems: Signal<CartItem[]> = signal<CartItem[]>([]);
   private filteredShoppingItems: Signal<ShoppingItem[]> = signal<ShoppingItem[]>([]);
 
   constructor(private cartService: CartService, private fetchDataService: FetchDataService) {
     this.getFilteredShoppingItems();
-    /* 
-      i dont know what its not working without effect().
-      this.mapCartItems() returns empty filteredShoppingItems signal,
-      because data was not fetched when this.mapCartItems() funcion was executed. But why
-      if i used signal. when i try using:
-        this.filteredShoppingItems = computed(() => this.fetchDataService.getItemsByIds(cartItemsIds))
-      or 
-        this.filteredShoppingItems = () => this.fetchDataService.getItemsByIds(cartItemsIds)()
-      in mapCartItems() body i have error:
-        NG0602: toSignal() cannot be called from within a reactive context. Invoking `toSignal`
-         causes new subscriptions every time. Consider moving `toSignal` outside of the reactive 
-         context and read the signal value where needed.
-    */
-      
-    effect(()=> this.mapCartItems())
+    this.mapCartItems()
   }
 
   private getFilteredShoppingItems() {
@@ -49,9 +35,11 @@ export class CartComponent {
 
   private mapCartItems() {
     const cartItems = computed(() => this.cartService.cartItemsStorage);
-    this.cartMappedItems = cartItems().map(cartItem => {
+    this.cartMappedItems = computed(() => {
+    return cartItems().map(cartItem => {
       const matchedItem = this.filteredShoppingItems().find(item => item.id === cartItem.itemId);
-      return { ...cartItem, item: matchedItem }
+      return { ...cartItem, item: matchedItem };
+      });
     });
   }
 
