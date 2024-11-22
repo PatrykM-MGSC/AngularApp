@@ -1,0 +1,33 @@
+$card-width: 18rem;
+$card-min-height: 30rem;
+$margin-small: 1rem;
+$margin-bottom-large: 5rem;
+$card-shadow-color: rgba(85, 95, 169, 1);
+$card-shadow-strength: 33px;
+$card-hover-top: -30px;
+
+.card {
+    width: $card-width;
+    margin: $margin-small $margin-small $margin-bottom-large $margin-small;
+    min-height: $card-min-height;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+
+    &:hover {
+        -webkit-box-shadow: 0px 0px $card-shadow-strength -7px $card-shadow-color;
+        -moz-box-shadow: 0px 0px $card-shadow-strength -7px $card-shadow-color;
+        box-shadow: 0px 0px $card-shadow-strength -7px $card-shadow-color;
+        top: $card-hover-top;
+    }
+}
+
+.card-img-top {
+    margin-top: -48px !important;
+    width: 58% !important;
+}
+
+.product-price {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}

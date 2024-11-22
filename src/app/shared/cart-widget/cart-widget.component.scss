@@ -1,0 +1,33 @@
+$cart-btn-bg: #c0421c;
+$cart-btn-text: #FFF;
+$cart-btn-radius: 50px;
+$cart-btn-padding: 10px 20px;
+$cart-btn-font-size: 18px;
+$cart-btn-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+$cart-width: 200px;
+$cart-bottom: 20px;
+$cart-right: 20px;
+$cart-z-index: 1000;
+
+
+.cart-widget {
+    position: fixed;
+    bottom: $cart-bottom;
+    right: $cart-right;
+    width: $cart-width;
+    z-index: $cart-z-index;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cart-button {
+      background-color: $cart-btn-bg;
+      color: $cart-btn-text;
+      border: none;
+      border-radius: $cart-btn-radius;
+      padding: $cart-btn-padding;
+      cursor: pointer;
+      font-size: $cart-btn-font-size;
+      box-shadow: $cart-btn-shadow;
+  }
+}

@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common'
   standalone: true,
   imports: [CartItemComponent, BannerComponent, CommonModule],
   templateUrl: './cart-items-list.component.html',
-  styleUrl: './cart-items-list.component.css'
+  styleUrl: './cart-items-list.component.scss'
 })
 export class CartItemsListComponent {
   @Input({required: true}) cartItems!: CartItem[];

@@ -9,7 +9,7 @@ import { FormatPricePipe } from '../../../shared/pipes/format-price-pipe.pipe';
   standalone: true,
   imports: [CommonModule, FormatPricePipe],
   templateUrl: './shopping-item.component.html',
-  styleUrl: './shopping-item.component.css'
+  styleUrl: './shopping-item.component.scss'
 })
 
 export class ShoppingItemComponent {

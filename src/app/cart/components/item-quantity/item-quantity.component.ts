@@ -6,7 +6,7 @@ import { CartService } from '../../../services/cart-service/cart-service.service
   standalone: true,
   imports: [],
   templateUrl: './item-quantity.component.html',
-  styleUrl: './item-quantity.component.css'
+  styleUrl: './item-quantity.component.scss'
 })
 export class ItemQuantityComponent {
   @Input({required: true}) quantity!: number;

@@ -7,7 +7,7 @@ import { CartService } from "../../services/cart-service/cart-service.service";
     selector: 'app-header',
     standalone: true,
     templateUrl: './header.component.html',
-    styleUrl: './header.component.css',
+    styleUrl: './header.component.scss',
     imports: [BannerComponent, RouterModule]
 })
 

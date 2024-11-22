@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './shopping-summary.component.html',
-  styleUrl: './shopping-summary.component.css'
+  styleUrl: './shopping-summary.component.scss'
 })
 export class ShoppingSummaryComponent {}

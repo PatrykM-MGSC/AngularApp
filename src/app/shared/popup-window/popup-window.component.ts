@@ -5,7 +5,7 @@ import { TranslationService } from '../../services/translation-service/transalti
   selector: 'app-popup-window',
   standalone: true,
   templateUrl: './popup-window.component.html',
-  styleUrls: ['./popup-window.component.css'],
+  styleUrls: ['./popup-window.component.scss'],
 })
 
 export class PopupWindowComponent {

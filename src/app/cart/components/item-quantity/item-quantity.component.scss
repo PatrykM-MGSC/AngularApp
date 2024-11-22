@@ -1,0 +1,14 @@
+$button-height: 40px;
+$input-width: 2.8rem;
+$padding-zero: 0px;
+
+.quantityButton {
+    height: $button-height;
+}
+
+.quantityInput {
+    width: $input-width;
+    text-align: center;
+    padding-right: $padding-zero;
+    padding-left: $padding-zero;
+}
