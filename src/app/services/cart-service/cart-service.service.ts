@@ -1,4 +1,4 @@
-import { computed, Injectable, Signal, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { CartItem } from '../../models/cart-item.model';
 
 @Injectable({
