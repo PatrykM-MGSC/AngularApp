@@ -20,8 +20,8 @@ export class CartItemComponent {
   constructor(private cartService: CartService, private dialog: MatDialog) {}
 
   onDeleteClick(): void {
-    const dialogRef = this.dialog.open(ConfirmDeleteDialogComponent, {
-      data: { itemName: this.cartItem.item?.name },
+    const dialogRef = this.dialog.open(ConfirmDeleteDialogComponent, { data:
+      { titleKey: "confirmDeleteTitle", descriptionKey: "confirmDeleteDescription" },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
