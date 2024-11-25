@@ -1,9 +1,17 @@
-<div class="card bg-light mb-3 shoppingSummary" style="max-width: 18rem;">
+<div class="card bg-light mb-3 shoppingSummary" style="max-width: 22rem;">
     <div class="card-header">Shopping summary</div>
     <div class="card-body">
-      <h5 class="card-title">Total amount: x.000 zł</h5>
-      <a href="#" class="btn btn-success mt-4 m-2">Order</a>
-      <a href="#" class="btn btn-danger mt-4 m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cancel all</a>
+      <div class="row">
+        <h5 class="col text-start">Total amount:</h5>
+        <div class="col text-end">{{ totalAmount | formatPrice }}</div>
+      </div>
+      <div class="row">
+        <div class="col text-start">Tax included (12%):</div>
+        <div class="col text-end">{{ totalTax | formatPrice }}</div>
+      </div>
+      <hr>
+      <button type="button" class="btn btn-success mt-4 m-2">Order</button>
+      <button (click)="onDeleteClick()" type="button" class="btn btn-outline-danger mt-4 m-2 floatRight">Cancel all</button>
     </div>
   </div>
   
