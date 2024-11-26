@@ -25,7 +25,7 @@ export class CartComponent {
 
   constructor(private cartService: CartService, private fetchDataService: FetchDataService) {
     this.getFilteredShoppingItems();
-    this.mapCartItems()
+    this.mapCartItems();
   }
 
   private getFilteredShoppingItems() {
