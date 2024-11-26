@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, signal, Signal, SimpleChanges } from '@angular/core';
+import { Component, computed, Input, signal } from '@angular/core';
 import { FormatPricePipe } from '../../../shared/pipes/format-price-pipe.pipe';
 import { CartItem } from '../../../models/cart-item.model';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,11 +13,14 @@ import { CartService } from '../../../services/cart-service/cart-service.service
   styleUrl: './shopping-summary.component.scss'
 })
 
-export class ShoppingSummaryComponent implements OnChanges {
-  @Input({required: true}) cartItems: CartItem[] = []; 
-
-  private totalItemsAmount: number = 0;
-  private totalTaxAmount: number = 0;
+export class ShoppingSummaryComponent {
+  @Input({ required: true }) set cartItems(value: CartItem[]) {
+    this.cartItemsSignal.set(value);
+  }
+  
+  private cartItemsSignal = signal<CartItem[]>([]);
+  totalItemsAmount = computed(() => this.calculateTotalAmount());
+  totalTaxAmount = computed(() => this.calculateTotalTax());
   private taxPercentage: number = 0.12;
 
   constructor(private dialog: MatDialog, private cartService: CartService) {}
@@ -34,16 +37,9 @@ export class ShoppingSummaryComponent implements OnChanges {
     });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['cartItems']) {
-      this.totalItemsAmount = this.calculateTotalAmount();
-      this.totalTaxAmount = this.calculateTotalTax();
-    }
-  }
-
   private calculateTotalAmount(): number {
     let total = 0;
-    this.cartItems.forEach((cartItem) => {
+    this.cartItemsSignal().forEach((cartItem) => {
       if (cartItem.item) {
         total += cartItem.item.price * cartItem.quantity;
       }
@@ -57,10 +53,10 @@ export class ShoppingSummaryComponent implements OnChanges {
   }
 
   get totalAmount() {
-    return this.totalItemsAmount;
+    return this.totalItemsAmount();
   }
 
   get totalTax(){
-    return this.totalTaxAmount;
+    return this.totalTaxAmount();
   }
 }
